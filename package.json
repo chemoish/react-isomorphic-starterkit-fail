@@ -1,0 +1,51 @@
+{
+  "name": "react-isomorphic-starterkit-fail",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node ./node_modules/concurrently/src/main.js \"npm run server\" \"npm run webpack-server\" \"npm run webpack-client\"",
+    "server": "node ./node_modules/wait-run/bin/wait-run.js --pattern 'dist/*.js' \"node dist/server.js\"",
+    "webpack-client": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.client-start.js",
+    "webpack-server": "node ./node_modules/webpack/bin/webpack.js --watch --verbose --colors --display-error-details --config webpack.config.server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chemoish/react-isomorphic-starterkit-fail.git"
+  },
+  "author": "Carey Hinoki <carey.hinoki@gmail.com> (http://www.careyhinoki.me/)",
+  "dependencies": {
+    "babel": "^6.3.26",
+    "express": "^4.13.3",
+    "history": "^1.17.0",
+    "query-string": "^3.0.0",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
+    "react-redux": "^4.0.6",
+    "react-router": "^1.0.3",
+    "redux": "^3.0.5",
+    "redux-router": "^1.0.0-beta7",
+    "redux-thunk": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
+    "babel-runtime": "^6.3.19",
+    "concurrently": "^1.0.0",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-react": "^3.13.1",
+    "react-transform-hmr": "^1.0.1",
+    "wait-run": "^1.1.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-hot-middleware": "^2.6.0"
+  }
+}
