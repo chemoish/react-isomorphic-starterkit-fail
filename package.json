@@ -7,7 +7,7 @@
     "start": "node ./node_modules/concurrently/src/main.js \"npm run server\" \"npm run webpack-server\" \"npm run webpack-client\"",
     "server": "node ./node_modules/wait-run/bin/wait-run.js --pattern 'dist/*.js' \"node dist/server.js\"",
     "webpack-client": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.client-start.js",
-    "webpack-server": "node ./node_modules/webpack/bin/webpack.js --watch --verbose --colors --display-error-details --config webpack.config.server.js",
+    "webpack-server": "node ./node_modules/webpack/bin/webpack.js --watch --verbose --colors --display-error-details --config webpack.config.server-start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

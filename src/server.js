@@ -9,12 +9,14 @@ import { match, reduxReactRouter } from 'redux-router/server';
 import { ReduxRouter, routerStateReducer } from 'redux-router';
 import { renderToString } from 'react-dom/server';
 
-import routes from './routes';
+import routesContainer from './routes';
 
 import Html from './html';
 
 const app = new Express();
 const port = 8000;
+
+let routes = routesContainer;
 
 function getMarkup(store) {
   const component = (
@@ -80,4 +82,10 @@ app.listen(port, function (error) {
   }
 });
 
-console.log(module.hot);
+if (module.hot) {
+  console.log('[HMR] Server listening');
+
+  module.hot.accept('./routes', () => {
+    routes = require('./routes');
+  });
+}
